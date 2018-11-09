@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../scripts/bootstrap-3.3.6-dist/css/bootstrap.min.css" />
+</head>
+<body ng-app>
+    <div class="container" ng-controller="cartController">
+        <table class="table" ng-show="cart.length > 0">
+            <thead>
+                <tr>
+                    <th>产品编号</th>
+                    <th>产品名称</th>
+                    <th>产品数量</th>
+                    <th>产品单价</th>
+                    <th>产品总价</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in cart" >
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>
+                        <button type="button" class="btn btn-info" ng-click="reduceItem(item.id)">-</button>
+                        <input type="text" ng-model="item.qty" />
+                        <button type="button" class="btn btn-info" ng-click="addItem(item.id)">+</button>
+                    </td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.qty * item.price}}</td>
+                    <td>
+                        <button type="button" class="btn btn-danger" ng-click="removeItem(item.id)">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>总计金额</td>
+                    <td>{{ totalPrice() }}</td>
+                    <td>总计数量</td>
+                    <td>{{ totalCount() }}</td>
+                    <td>
+                        <button type="button" class="btn btn-warning" ng-click="removeAll()">清空购物车</button>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <div ng-hide="cart.length > 0">您现在的购物车是空的了!</div>
+    </div>
+
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/angular.js/1.2.16/angular.min.js"></script>
+    <script type="text/javascript" src="../../scripts/changan/test-ng-cart.js"></script>
+</body>
+</html>

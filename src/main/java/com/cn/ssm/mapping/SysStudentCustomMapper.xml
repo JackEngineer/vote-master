@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.ssm.mapping.SysStudentCustomMapper">
+    <resultMap id="BaseResultMap" type="com.cn.ssm.dao.SysStudent">
+        <id column="student_id" jdbcType="INTEGER" property="studentId" />
+        <result column="student_name" jdbcType="VARCHAR" property="studentName" />
+        <result column="student_img" jdbcType="VARCHAR" property="studentImg" />
+        <result column="student_age" jdbcType="VARCHAR" property="studentAge" />
+        <result column="student_context" jdbcType="VARCHAR" property="studentContext" />
+        <result column="student_code" jdbcType="VARCHAR" property="studentCode" />
+        <result column="student_ticket" jdbcType="INTEGER" property="studentTicket" />
+        <result column="student_activeId" jdbcType="VARCHAR" property="studentActiveid" />
+        <result column="student_numb" jdbcType="VARCHAR" property="studentNumb" />
+    </resultMap>
+  <select id="selectSum" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+   select sum(student_ticket) from sys_student where student_activeId=#{activeId}
+  </select>
+
+    <select id="rankList" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+   select * from sys_student where student_activeId=#{companyId} ORDER BY student_ticket desc limit 0,20
+    </select>
+
+    <select id="rankListAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select * from sys_student where student_activeId=#{companyId} ORDER BY student_ticket desc
+    </select>
+</mapper>

@@ -1,0 +1,32 @@
+<div class="bg-light lter b-b wrapper-md">
+  <span class="m-l h3">新增/修改礼物</span>
+  <!--</a>-->
+</div>
+
+<div class="wrapper-md">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="line line-dashed b-b line-lg pull-in"></div>
+      <div class="form-group">
+        <div class="panel panel-default">
+            <label for="giftName" class="m-l">礼物名：</label>
+            <input type="text" id="giftName" class="form-control" ng-model="queryParam.giftName">
+            <label for="giftPrice" class="m-l">礼物价格：</label>
+            <input type="text" id="giftPrice" class="form-control" ng-model="queryParam.giftPrice">
+            <label for="giftTicket" class="m-l">礼物对应票数：</label>
+            <input type="number" id="giftTicket" class="form-control" ng-model="queryParam.giftTicket" onkeyup="value=value.replace(/[^\d]/g,'') " ng-pattern="/[^a-zA-Z]/">
+        </div>
+      </div>
+
+        <div class="form-group">
+      <div class="line line-dashed b-b line-lg pull-in"></div>
+        <div class="form-group">
+          <div class="col-sm-4 col-sm-offset-2">
+            <button type="submit" class="btn btn-primary" ng-click="btnSaveClick()">确认</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">返回</button>
+          </div>
+        </div>
+  </div>
+</div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body ng-app>
+
+    <div ng-controller="firstController">
+        <input type="text" data-ng-model="name" value="" />
+        {{ name }}
+        <input type="text" ng-model="age" value="" />
+        <input type="text" ng-model="sex" value="" />
+    </div>
+
+    <div ng-controller="secondController">
+        <input type="text" data-ng-model="name" value="" />
+        {{ name }}
+        <input type="text" ng-model="age" value="" />
+        <input type="button"  ng-click="addAge();" />
+    </div>
+
+    <script type="text/javascript" src="../../scripts/changan/testController.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/angular.js/1.2.16/angular.min.js"></script>
+</body>
+</html>

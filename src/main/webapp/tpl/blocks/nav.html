@@ -1,0 +1,30 @@
+<ul class="nav">
+  <li ng-repeat-start="nav in navList"
+      class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span>{{nav.superNav.name}}</span>
+  </li>
+  <li>
+    <a href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+      <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+      <span class="font-bold">{{nav.superNav.name}}</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>{{nav.superNav.name}}</span>
+        </a>
+      </li>
+      <li ng-repeat="subNav in nav.subNav"
+          pk-go-active="active">
+        <a href="javascript: void (0)" pk-go="{{subNav.href}}">
+          <span>{{subNav.name}}</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li ng-if="false" ng-repeat-end></li>
+</ul>

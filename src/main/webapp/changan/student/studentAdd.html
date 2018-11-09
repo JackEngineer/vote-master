@@ -1,0 +1,31 @@
+<div class="bg-light lter b-b wrapper-md">
+  <span class="m-l h3">新增/修改学生</span>
+  <!--</a>-->
+</div>
+
+<div class="wrapper-md">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="line line-dashed b-b line-lg pull-in"></div>
+      <div class="form-group">
+        <div class="panel panel-default">
+            <label for="studentName" class="m-l">学生名：</label>
+            <input type="text" id="studentName" class="form-control" ng-model="queryParam.studentName">
+            <label for="studentAge" class="m-l">学生年龄：</label>
+            <input type="text" id="studentAge" class="form-control" ng-model="queryParam.studentAge">
+            <label for="studentContext" class="m-l">性别：</label>
+            <select class="form-control" ng-init="queryParam.studentContext = sex[0]" ng-model="queryParam.studentContext" id="studentContext" ng-options="x for x in sex"></select>
+            <label for="studentActiveid" class="m-l">报名活动：</label>
+            <select class="form-control" ng-init="queryParam.studentActiveid = detail[0]" ng-model="queryParam.studentActiveid" id="studentActiveid" ng-options="x for x in detail"></select>
+        </div>
+      <div class="line line-dashed b-b line-lg pull-in"></div>
+        <div class="form-group">
+          <div class="col-sm-4 col-sm-offset-2">
+            <button type="submit" class="btn btn-primary" ng-click="btnSaveClick()">确认</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">返回</button>
+          </div>
+        </div>
+  </div>
+</div>
+  </div>
+</div>

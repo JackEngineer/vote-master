@@ -1,0 +1,26 @@
+
+<div class="modal-header">
+    <h3 class="modal-title">{{title}}</h3>
+</div>
+
+<div class="modal-body">
+    <p class="m-t-md">请选择需要上传的文件</p>
+    <input type="file" nv-file-select="" uploader="uploader" />
+    <div>
+        <div>
+            <p>Queue progress:</p>
+            <div class="progress bg-light dker" style="">
+                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-addon btn-success" ng-click="btnSendClick()" ng-disabled="!uploader.getNotUploadedItems().length">
+        <i class="fa fa-arrow-circle-o-up"></i> 上传文件
+    </button>
+    <button type="button" class="btn btn-addon btn-warning" ng-click="btnCancelClick()">
+        <i class="fa fa-ban"></i> 取消
+    </button>
+</div>

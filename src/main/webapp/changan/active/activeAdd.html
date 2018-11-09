@@ -1,0 +1,50 @@
+<div class="bg-light lter b-b wrapper-md">
+  <span class="m-l h3">新增/修改活动</span>
+  <!--</a>-->
+</div>
+
+<div class="wrapper-md">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="line line-dashed b-b line-lg pull-in"></div>
+      <div class="form-group">
+        <div class="panel panel-default">
+            <label for="activeName" class="m-l">活动名：</label>
+            <input type="text" id="activeName" class="form-control" ng-model="queryParam.activeName">
+            <label for="activeCompanyid" class="m-l">机构</label>
+            <select class="form-control" ng-init="selectedName = detail[0]" ng-model="queryParam.activeCompanyid" id="activeCompanyid" ng-options="x for x in detail"></select>
+            <label for="activeContext" class="m-l">活动内容：</label>
+            <input type="text" id="activeContext" class="form-control" ng-model="queryParam.activeContext">
+            <label for="activePlace" class="m-l">活动地点：</label>
+            <input type="text" id="activePlace" class="form-control" ng-model="queryParam.activePlace">
+            <label for="activeBegintime" class="m-l">设置开始日期</label>
+            <input type="text" datepicker-popup="yyyy-MM-dd" id="activeBegintime"
+                   ng-model="queryParam.activeBegintime" is-open="openedBegin"
+                   datepicker-options="dateOptions"
+                   ng-required="true"
+                   close-text="关闭" readonly/>
+            <button type="button" class="btn btn-default" ng-click="opener1($event,0)"><i
+                    class="glyphicon glyphicon-calendar"></i></button>
+            <label for="activeEndtime" class="m-l">设置结束日期</label>
+            <input type="text"  datepicker-popup="yyyy-MM-dd" id="activeEndtime"
+                   ng-model="queryParam.activeEndtime" is-open="openedEnd"
+                   datepicker-options="dateOptions"
+                   ng-required="true"
+                   close-text="关闭" readonly/>
+            <button type="button" class="btn btn-default" ng-click="opener1($event,1)"><i
+                    class="glyphicon glyphicon-calendar"></i></button>
+        </div>
+      </div>
+
+        <div class="form-group">
+      <div class="line line-dashed b-b line-lg pull-in"></div>
+        <div class="form-group">
+          <div class="col-sm-4 col-sm-offset-2">
+            <button type="submit" class="btn btn-primary" ng-click="btnSaveClick()">确认</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">返回</button>
+          </div>
+        </div>
+  </div>
+</div>
+  </div>
+</div>

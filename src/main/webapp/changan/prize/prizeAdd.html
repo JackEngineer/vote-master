@@ -1,0 +1,32 @@
+<div class="bg-light lter b-b wrapper-md">
+  <span class="m-l h3">新增/修改奖品</span>
+  <!--</a>-->
+</div>
+
+<div class="wrapper-md">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="line line-dashed b-b line-lg pull-in"></div>
+      <div class="form-group">
+        <div class="panel panel-default">
+            <label for="prizeName" class="m-l">奖品名：</label>
+            <input type="text" id="prizeName" class="form-control" ng-model="queryParam.prizeName">
+            <label for="prizeContext" class="m-l">奖品内容：</label>
+            <input type="text" id="prizeContext" class="form-control" ng-model="queryParam.prizeContext">
+            <label for="activeid" class="m-l">活动</label>
+            <select class="form-control" ng-init="selectedName = detail[0]" ng-model="queryParam.activeid" id="activeid" ng-options="x for x in detail"></select>
+        </div>
+      </div>
+
+        <div class="form-group">
+      <div class="line line-dashed b-b line-lg pull-in"></div>
+        <div class="form-group">
+          <div class="col-sm-4 col-sm-offset-2">
+            <button type="submit" class="btn btn-primary" ng-click="btnSaveClick()">确认</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">返回</button>
+          </div>
+        </div>
+  </div>
+</div>
+  </div>
+</div>

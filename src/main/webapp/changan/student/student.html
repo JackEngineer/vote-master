@@ -1,0 +1,21 @@
+<div  class="bg-light lter b-b wrapper-md" style="margin-top: 20px">
+  <h1 class="m-n font-thin h3">学生管理</h1>
+</div>
+
+<div class="wrapper-md">
+  <div class="panel panel-default">
+    <div class="form-inline panel-heading">
+      <label for="studentName" class="m-l">学生名</label>
+      <input type="text" id="studentName" class="form-control" ng-model="studentName">
+      <!-- 操作 -->
+      <div class="btn-group" dropdown>
+        <button type="button" class="btn btn-info m-l h-34" ng-click="btnQueryAdd()">新增</button>
+        <button type="button" class="btn btn-info m-l h-34" ng-click="btnQueryClick()">检索</button>
+      </div>
+    </div>
+    <!-- 数据表格 with ngGird-->
+    <div class="table-responsive">
+      <div ng-grid="gridOptions" style="min-height:420px;mi-n-width: 1800px"></div>
+    </div>
+  </div>
+</div>
